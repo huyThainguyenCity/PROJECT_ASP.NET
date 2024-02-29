@@ -4,14 +4,14 @@
     "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj": {}
   },
   "projects": {
-    "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj": {
+    "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj",
-        "projectName": "Project_ASP.NET",
-        "projectPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj",
+        "projectUniqueName": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\obj\\",
+        "outputPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,93 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj",
+        "projectName": "Project_ASP.NET",
+        "projectPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\Project_ASP.NET.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\Project_ASP.NET\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\BusinessObject\\BusinessObject.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

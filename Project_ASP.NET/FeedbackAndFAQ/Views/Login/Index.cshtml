@@ -1,0 +1,158 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHeplers
+@using BusinessObject.Models
+@model Account
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="@Url.Content("~/css/login.css")">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>LOGO .</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link active">Trang chủ</a></li>
+
+
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Đăng nhập</button>
+                <button class="btn" id="registerBtn" onclick="register()">Đăng ký</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+            @if (ViewData["Error"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["Error"]
+                </div>
+            }
+
+            @if (ViewData["SignUp"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewData["SignUp"]
+                </div>
+            }
+        </nav>
+
+        <!----------------------------- Form box ----------------------------------->
+        <div class="form-box">
+
+            <!------------------- login form -------------------------->
+            <form asp-action="GetUser" method="post" class="login-container" id="login">
+                <div class="top">
+                    <span>Chưa có tài khoản? <a href="#" onclick="register()">Đăng ký</a></span>
+                    <header>Đăng nhập</header>
+                </div>
+                <div class="input-box">
+                    <input name="email" type="text" id="email" class="input-field" placeholder="Tên người dùng">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input name="pass" type="password" id="pass" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Đăng nhập">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Ghi nhớ đăng nhập</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Quên mật khẩu?</a></label>
+                    </div>
+                </div>
+            </form>
+            <!------------------- registration form -------------------------->
+            <form asp-action="SignUp" method="post" class="register-container" id="register">
+                <div class="top">
+                    <span>Bạn đã có tài khoản? <a href="#" onclick="login()">Đăng nhập</a></span>
+                    <header>Đăng ký</header>
+                </div>
+                <div class="input-box">
+                    <input name="email" type="text" id="email" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input name="pass" type="password" id="pass" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <div class="radio_container">
+                        <label> <input id="teacher" name="role" checked type="radio" value="1"> Giáo viên </label>
+                        <label><input id="student" name="role" type="radio" value="2"> Học sinh </label>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Đăng ký">
+                    </div>
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check"> Ghi nhớ đăng nhập</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+    </script>
+
+    <script>
+
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+    </script>
+
+</body>
+
+</html>
