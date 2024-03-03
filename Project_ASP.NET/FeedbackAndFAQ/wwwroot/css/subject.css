@@ -1,0 +1,8 @@
+﻿table {
+    width: 100%;
+}
+
+    table thead tr th {
+        background-color: #6B90DA;
+        border-right: 1px solid white;
+    }

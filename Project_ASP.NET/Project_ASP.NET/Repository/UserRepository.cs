@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project_ASP.NET.Repository
 {
@@ -10,9 +11,10 @@ namespace Project_ASP.NET.Repository
         {
             _context = context;
         }
+
         public bool GetUser(string username, string password)
         {
-            Account user = _context.Accounts.FirstOrDefault(u => u.Username == username && u.Password == password);
+            Account user = _context.Accounts.Include(u => u.Role).FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user == null)
             {
                 return false;

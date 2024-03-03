@@ -13,12 +13,24 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\question.css",
+      "PackagePath": "staticwebassets\\css\\question.css"
+    },
+    {
       "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\subject.css",
+      "PackagePath": "staticwebassets\\css\\subject.css"
+    },
+    {
       "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\back.jpg",
+      "PackagePath": "staticwebassets\\images\\back.jpg"
     },
     {
       "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\login-background3.jpg",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jvi855lVocpV3jsuz43j6Ji3pVsSIHJibyMgRetW1aM=",
+  "Hash": "AnWcMEp1lij3yJmAq36gJGn38DE0s1D0F/9rn6YNEKk=",
   "Source": "FeedbackAndFAQ",
   "BasePath": "_content/FeedbackAndFAQ",
   "Mode": "Default",
@@ -97,6 +97,23 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
+      "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\question.css",
+      "SourceId": "FeedbackAndFAQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\",
+      "BasePath": "_content/FeedbackAndFAQ",
+      "RelativePath": "css/question.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\question.css"
+    },
+    {
       "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\site.css",
       "SourceId": "FeedbackAndFAQ",
       "SourceType": "Discovered",
@@ -114,6 +131,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\css\\subject.css",
+      "SourceId": "FeedbackAndFAQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\",
+      "BasePath": "_content/FeedbackAndFAQ",
+      "RelativePath": "css/subject.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\subject.css"
+    },
+    {
       "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\favicon.ico",
       "SourceId": "FeedbackAndFAQ",
       "SourceType": "Discovered",
@@ -129,6 +163,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\back.jpg",
+      "SourceId": "FeedbackAndFAQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\",
+      "BasePath": "_content/FeedbackAndFAQ",
+      "RelativePath": "images/back.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\back.jpg"
     },
     {
       "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\login-background3.jpg",

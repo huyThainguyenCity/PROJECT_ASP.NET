@@ -7,18 +7,15 @@ namespace BusinessObject.Models
     {
         public Subject()
         {
-            SubjectAnswers = new HashSet<SubjectAnswer>();
-            SubjectQuestions = new HashSet<SubjectQuestion>();
-            SubjectStudents = new HashSet<SubjectStudent>();
-            SubjectTeachers = new HashSet<SubjectTeacher>();
+            Questions = new HashSet<Question>();
+            SubjectAccounts = new HashSet<SubjectAccount>();
         }
 
         public int SubjectId { get; set; }
         public string? SubjectName { get; set; }
+        public string? SubjectCode { get; set; }
 
-        public virtual ICollection<SubjectAnswer> SubjectAnswers { get; set; }
-        public virtual ICollection<SubjectQuestion> SubjectQuestions { get; set; }
-        public virtual ICollection<SubjectStudent> SubjectStudents { get; set; }
-        public virtual ICollection<SubjectTeacher> SubjectTeachers { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<SubjectAccount> SubjectAccounts { get; set; }
     }
 }

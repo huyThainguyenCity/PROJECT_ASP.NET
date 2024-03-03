@@ -23,6 +23,13 @@ namespace FeedbackAndFAQ.Controllers
                     {
                         string jsonResult = await res.Content.ReadAsStringAsync();
                         var resoult = JsonConvert.DeserializeObject<Account>(jsonResult);
+                        int roleId = resoult.RoleId.GetValueOrDefault();
+                        string name = resoult.Role.ToString();
+                        string accountId = resoult.AccountId.ToString();
+                        HttpContext.Session.SetString("Name", name);
+                        HttpContext.Session.SetInt32("Role", roleId);
+                        HttpContext.Session.SetString("Account", accountId);
+
                         return Redirect($"/Home");
                     }
                     else
