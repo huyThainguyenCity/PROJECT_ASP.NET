@@ -40,14 +40,15 @@
             <table id="myTable" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>NO</th>
-                        <th>ROLLNUMBER</th>
-                        <th>SUBJECT</th>
-                        <th>TITLE</th>
+                        <th>STT</th>
+                        <th>Mã sinh viên</th>
+                        <th>Môn học</th>
+                        <th>Nội dung</th>
                         <th></th>
-                        <th>SENT TIME</th>
-                        <th>REPLIED TIME</th>
                         <th></th>
+                        <th>Ngày gửi</th>
+                        <th>Ngày trả lời</th>
+                        <th>Trạng thái</th>
                     </tr>
                 </thead>
 
@@ -60,11 +61,16 @@
                             <td>@item.Subject.SubjectCode</td>
                             <td>@item.Description</td>
                             <td>
-                                <div class="answer" onclick="showHelloWorld(1)">View Answer</div>
-                                <div id="helloWorldMessage">Hello World</div>
+                                <a asp-action="GetQuestionByID" asp-route-questionID="@item.QuenstionId">
+                                    <div class="question">View Question</div>
+                                </a>
+                            </td>
+                            <td>
+                                <div class="answer" onclick="showHelloWorld(@item.QuenstionId)">View Answer</div>
+                                <div id="helloWorldMessage_@item.QuenstionId" class="answer_view" style="display:none">@item.AnswerDescription</div>
                             </td>
                             <td>@item.CreateDate</td>
-                            <td></td>
+                            <td>@item.ReplyDate</td>
                             <td>Process</td>
                         </tr>
                     }
@@ -79,6 +85,9 @@
             "paging": true // Bật tính năng phân trang
         });
     });
+    function showHelloWorld(index) {
+        $('#helloWorldMessage_' + index).toggle();
+    }
 </script>
 
 </html>

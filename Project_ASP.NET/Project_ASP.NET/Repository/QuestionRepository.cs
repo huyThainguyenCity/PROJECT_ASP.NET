@@ -31,13 +31,14 @@ namespace Project_ASP.NET.Repository
             }
         }
 
-        public void AddQuestion(string desc, DateTime createDate)
+        public void AddQuestion(string desc, int subjectID, DateTime createDate)
         {
             try
             {
                 Question question = new Question()
                 {
-                    Description = desc,                
+                    Description = desc,
+                    SubjectId = subjectID,
                     CreateDate = createDate
                 };
                 _context.Questions.Add(question);
@@ -62,19 +63,23 @@ namespace Project_ASP.NET.Repository
             return listQuestion;
         }
 
-        public void UpdateAnswer(int questionID, string ans_desc, DateTime replyDate)
+        public Question GetQuestionByID(int questionID)
+        {
+            Question questionByID = _context.Questions.FirstOrDefault(q => q.QuenstionId == questionID);
+            return questionByID;
+        }
+    
+        public void UpdateAnswer(int questionID, int subjectID, string ans_desc)
         {
             var questionToUpdate = _context.Questions.FirstOrDefault(q => q.QuenstionId == questionID);
             if (questionToUpdate != null)
             {
                 // Bản ghi được tìm thấy, tiến hành cập nhật thuộc tính cụ thể
                 questionToUpdate.AnswerDescription = ans_desc;
-                questionToUpdate.ReplyDate = replyDate;
-
+                questionToUpdate.ReplyDate = DateTime.Now;
                 // Thực hiện cập nhật trong cơ sở dữ liệu
                 _context.SaveChanges();
             }
-
         }
     }
 }

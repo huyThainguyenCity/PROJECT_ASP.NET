@@ -1,0 +1,25 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using BusinessObject.Models
+@model BusinessObject.Models.Question
+@{
+}
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số thứ tự</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="questionID" aria-describedby="emailHelp" readonly value="@(Model != null ? Model.QuenstionId : "")">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Số thứ tự</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="subjectID" aria-describedby="emailHelp" readonly value="@(Model != null ? Model.SubjectId : "")">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Câu hỏi</label>
+        <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>@(Model != null ? Model.Description : "")</textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Trả lời</label>
+        <textarea style="height: 200px" type="text" class="form-control" name="ans_desc" id="exampleInputPassword1">@(Model != null ? Model.AnswerDescription : "")</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi</button>
+</form>

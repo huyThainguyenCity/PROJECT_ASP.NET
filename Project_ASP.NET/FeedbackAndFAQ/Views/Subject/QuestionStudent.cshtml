@@ -1,0 +1,42 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using BusinessObject.Models
+@model List<SubjectAccount>
+@{
+    var subject = ViewBag.SubjectAccount as SubjectAccount;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="@Url.Content("~/css/subject.css")" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">... Danh sách môn học</h1>
+        <table>
+            <thead>
+            <th>Mã môn</th>
+            <th>Tên môn</th>
+            <th>Học sinh</th>
+            <th>Status</th>
+            </thead>
+            <tbody>
+                @foreach (SubjectAccount item in Model)
+                {
+                    <tr>
+                        <td>@item.Subject.SubjectCode</td>
+                        <td>@item.Subject.SubjectName</td>
+                        <td>@item.Account.StudentCode</td>
+                        <td><a asp-controller="Question" asp-route-id="@item.SubjectId"><button>View</button></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

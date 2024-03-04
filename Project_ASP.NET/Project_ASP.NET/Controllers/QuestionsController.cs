@@ -39,12 +39,19 @@ namespace Project_ASP.NET.Controllers
             return _us.getAllbySubject(subjectID);
         }
 
+        [HttpGet("listQues/{questionID}")]
+        public async Task<ActionResult<Question>> GetQuestionByID(int questionID)
+        {
+            var questions = _us.GetQuestionByID(questionID);
+            return questions;
+        }
+
         [HttpPost]
-        public IActionResult AddQuestion(string desc, DateTime createDate)
+        public IActionResult AddQuestion(string desc,int subjectID, DateTime createDate)
         {
             try
             {
-                _us.AddQuestion(desc, createDate);
+                _us.AddQuestion(desc,subjectID,createDate);
                 return Ok();
             }
             catch (Exception ex)
@@ -54,11 +61,11 @@ namespace Project_ASP.NET.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateAnswer(int questionID, string ans_desc, DateTime replyDate)
+        public IActionResult UpdateAnswer(int questionID, int subjectID, string ans_desc)
         {
             try
             {
-                _us.UpdateAnswer(questionID, ans_desc,replyDate);
+                _us.UpdateAnswer(questionID,subjectID,ans_desc);
                 return Ok();
             }
             catch (Exception ex)
