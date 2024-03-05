@@ -20,8 +20,30 @@
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" href="@Url.Content("~/css/question.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/home.css")">
+
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>LOGO .</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#" class="link active">Trang chủ</a></li>
+                <li><a href="subject" class="link">Câu hỏi</a></li>
+                <li><a href="#" class="link">Nhận xét</a></li>
+
+            </ul>
+        </div>
+        <div class="nav-button">
+            <a href="login.html"> <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button></a>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+
     <div class="feedback">
         <div class="feedback__title">FPT University</div>
         <div class="feedback__header">
@@ -62,11 +84,11 @@
                             <td>@item.Description</td>
                             <td>
                                 <a asp-action="GetQuestionByID" asp-route-questionID="@item.QuenstionId">
-                                    <div class="question">View Question</div>
+                                    <div class="question">Trả lời câu hỏi</div>
                                 </a>
                             </td>
                             <td>
-                                <div class="answer" onclick="showHelloWorld(@item.QuenstionId)">View Answer</div>
+                                <div class="answer" onclick="showHelloWorld(@item.QuenstionId)">Xem</div>
                                 <div id="helloWorldMessage_@item.QuenstionId" class="answer_view" style="display:none">@item.AnswerDescription</div>
                             </td>
                             <td>@item.CreateDate</td>
@@ -78,6 +100,36 @@
             </table>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-col">
+            <h3>Top Sản phẩm</h3>
+            <li>Khóa học</li>
+            <li>Giới thiệu</li>
+            <li>Sự kiện</li>
+
+        </div>
+        <div class="footer-col">
+            <h3>Top Sản phẩm</h3>
+            <li>Khóa học</li>
+            <li>Giới thiệu</li>
+            <li>Sự kiện</li>
+
+        </div>
+        <div class="footer-col">
+            <h3>Top Sản phẩm</h3>
+            <li>Khóa học</li>
+            <li>Giới thiệu</li>
+            <li>Sự kiện</li>
+
+        </div>
+        <div class="footer-col">
+            <h3>Truyền thông</h3>
+            <li>Youtube</li>
+            <li><img class="eduma" src="https://eduma.vn/wp-content/uploads/2019/02/VNNIC.png"></li>
+            <li></li>
+        </div>
+    </footer>
 </body>
 <script>
     $(document).ready(function () {
@@ -88,6 +140,32 @@
     function showHelloWorld(index) {
         $('#helloWorldMessage_' + index).toggle();
     }
+
+    const next = document.querySelector('.next')
+    const prev = document.querySelector('.prev')
+    const comment = document.querySelector('#list-comment')
+    const commentItem = document.querySelectorAll('#list-comment .item');
+    console.log(commentItem)
+    var translateY = 0;
+    var count = commentItem.length
+    next.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (count == 1) {
+            return false;
+        }
+        translateY += -400
+        comment.style.transform = `translateY(${translateY}px)`
+        count--;
+    })
+    prev.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (count == 3) {
+            return false;
+        }
+        translateY += 400
+        comment.style.transform = `translateY(${translateY}px)`
+        count++;
+    })
 </script>
 
 </html>

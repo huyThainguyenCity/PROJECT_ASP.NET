@@ -39,6 +39,16 @@ namespace Project_ASP.NET.Controllers
             return _us.getAllbySubject(subjectID);
         }
 
+        [HttpGet("{subjectID}/{accountID}")]
+        public async Task<ActionResult<IEnumerable<Question>>> GetAllQuestionBySubjectAndAccountId(int subjectID, int accountID)
+        {
+            if (_us.getAllbySubjectOfStudent == null)
+            {
+                return NotFound();
+            }
+            return _us.getAllbySubjectOfStudent(subjectID, accountID);
+        }
+
         [HttpGet("listQues/{questionID}")]
         public async Task<ActionResult<Question>> GetQuestionByID(int questionID)
         {

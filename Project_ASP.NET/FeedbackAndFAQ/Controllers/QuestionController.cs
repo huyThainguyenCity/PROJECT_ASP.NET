@@ -7,18 +7,32 @@ namespace FeedbackAndFAQ.Controllers
 {
     public class QuestionController : Controller
     {
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int subjectID)
         {
             string accountID = HttpContext.Session.GetString("Account");
-            //int? roleId = HttpContext.Session.GetInt32("Role");
+            int? roleId = HttpContext.Session.GetInt32("Role");
+
             if (accountID == null)
             {
                 return Redirect($"/Login");
             }
             else
             {
-                List<Question> questions = await GetBookFromApi(int.Parse(accountID));
-                return View(questions);
+                if (roleId == 1)
+                {
+                    List<Question> questions = await GetBookFromApi(subjectID);
+                    return View("Index", questions);
+                }
+                if (roleId == 2)
+                {
+                    List<Question> questions = await GetBookFromApiSandA(subjectID, int.Parse(accountID));
+                    return View("ListQuestionStudent", questions);
+                }
+                else
+                {
+                    return Redirect($"/Login");
+                }
+                
             }
         }
 
@@ -36,6 +50,28 @@ namespace FeedbackAndFAQ.Controllers
                     {
                         string data = await content.ReadAsStringAsync();
                         books = JsonConvert.DeserializeObject<List<Question>>(data);
+                    }
+                }
+            }
+            return books;
+        }
+
+        public async Task<List<Question>> GetBookFromApiSandA(int subjectID, int accountId)
+        {
+            List<Question> books = new List<Question>();
+
+            string link = "https://localhost:7198/api/Questions";
+
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync(link + "/" + subjectID + "/" + accountId))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        books = JsonConvert.DeserializeObject<List<Question>>(data)
+                                            .Where(x => x.AccountId == accountId)
+                                            .ToList();
                     }
                 }
             }

@@ -63,6 +63,15 @@ namespace Project_ASP.NET.Repository
             return listQuestion;
         }
 
+        public List<Question> getAllbySubjectOfStudent(int subjectID, int accountID)
+        {
+            List<Question> listQuestion = _context.Questions
+                            .Include(u => u.Account)
+                            .Include(u => u.Subject)
+                            .Where(u => u.SubjectId == subjectID && u.AccountId == accountID).ToList();
+            return listQuestion;
+        }
+
         public Question GetQuestionByID(int questionID)
         {
             Question questionByID = _context.Questions.FirstOrDefault(q => q.QuenstionId == questionID);

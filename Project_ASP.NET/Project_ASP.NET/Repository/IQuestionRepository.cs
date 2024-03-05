@@ -8,6 +8,8 @@ namespace Project_ASP.NET.Repository
 
         public List<Question> getAllbySubject(int subjectID);
 
+        public List<Question> getAllbySubjectOfStudent(int subjectID, int accountID);
+
         public void AddQuestion(string desc,int subjectID, DateTime createDate);
 
         public void UpdateAnswer(int questionID, int subjectID, string ans_desc);
