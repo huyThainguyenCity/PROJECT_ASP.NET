@@ -49,6 +49,7 @@ namespace FeedbackAndFAQ.Controllers
                     using (HttpContent content = res.Content)
                     {
                         string data = await content.ReadAsStringAsync();
+                        
                         books = JsonConvert.DeserializeObject<List<Question>>(data);
                     }
                 }
@@ -115,6 +116,41 @@ namespace FeedbackAndFAQ.Controllers
                 }
             }
             return View("Answer", question);
+        }
+
+        public async Task<IActionResult> Insert(string desc, int subjectID)
+        {
+            string link1 = "https://localhost:7198/api/Subjects";
+            List<Subject> subjects = new List<Subject>();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync(link1))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        subjects = JsonConvert.DeserializeObject<List<Subject>>(data);
+                    }
+                }
+            }
+            ViewBag.Subject = subjects;
+
+            string link = "https://localhost:7198/api/Questions";
+
+            Question question = new Question();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.PostAsync
+                (link + "?desc=" + desc + "&subjectID=" + subjectID, null))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        question = JsonConvert.DeserializeObject<Question>(data);
+                    }
+                }
+            }
+            return View("ListQuestionStudent", question);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Project_ASP.NET.Repository
             }
         }
 
-        public void AddQuestion(string desc, int subjectID, DateTime createDate)
+        public void AddQuestion(string desc, int subjectID)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Project_ASP.NET.Repository
                 {
                     Description = desc,
                     SubjectId = subjectID,
-                    CreateDate = createDate
+                    CreateDate = DateTime.Now
                 };
                 _context.Questions.Add(question);
                 _context.SaveChanges();

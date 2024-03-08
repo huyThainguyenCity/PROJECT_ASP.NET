@@ -42,7 +42,7 @@ namespace FeedbackAndFAQ.Controllers
 
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage res = await client.GetAsync(link + "?accountID=" + accountID))
+                using (HttpResponseMessage res = await client.GetAsync(link + "/" + accountID))
                 {
                     using (HttpContent content = res.Content)
                     {

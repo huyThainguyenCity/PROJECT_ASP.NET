@@ -18,7 +18,7 @@ namespace Project_ASP.NET.Controllers
             _us = us;
         }
 
-        [HttpGet]
+        [HttpGet("{accountID}")]
         public ActionResult<List<SubjectAccount>> GetSubject(int accountID)
         {
             if (_us.GetList(accountID) == null)
@@ -26,6 +26,16 @@ namespace Project_ASP.NET.Controllers
                 return NotFound();
             }
             return _us.GetList(accountID);
+        }
+
+        [HttpGet]
+        public ActionResult<List<Subject>> GetAllSubject()
+        {
+            if (_us.GetListAll == null)
+            {
+                return NotFound();
+            }
+            return _us.GetListAll();
         }
     }
 }

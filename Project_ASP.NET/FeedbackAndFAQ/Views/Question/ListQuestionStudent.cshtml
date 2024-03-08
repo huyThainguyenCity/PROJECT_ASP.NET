@@ -60,13 +60,18 @@
         </div>
         <div class="feedback__table">
             <table id="myTable" class="table table-striped" style="width:100%">
+                <div>
+                    
+                 <button asp-controller="Question" asp-action="Insert" class="question">Thêm câu hỏi</button>
+                    
+                </div>
+
                 <thead>
                     <tr>
                         <th>STT</th>
                         <th>Mã sinh viên</th>
                         <th>Môn học</th>
                         <th>Nội dung</th>
-                        <th></th>
                         <th></th>
                         <th>Ngày gửi</th>
                         <th>Ngày trả lời</th>
@@ -82,11 +87,7 @@
                             <td>@item.Account.StudentCode</td>
                             <td>@item.Subject.SubjectCode</td>
                             <td>@item.Description</td>
-                            <td>
-                                <a asp-action="GetQuestionByID" asp-route-questionID="@item.QuenstionId">
-                                    <div class="question">Thêm câu hỏi</div>
-                                </a>
-                            </td>
+
                             <td>
                                 <div class="answer" onclick="showHelloWorld(@item.QuenstionId)">Câu trả lời</div>
                                 <div id="helloWorldMessage_@item.QuenstionId" class="answer_view" style="display:none">@item.AnswerDescription</div>
