@@ -17,6 +17,7 @@ namespace BusinessObject.Models
         }
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
+        public virtual DbSet<Feedback> Feedbacks { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<Subject> Subjects { get; set; } = null!;
@@ -63,6 +64,31 @@ namespace BusinessObject.Models
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.RoleId)
                     .HasConstraintName("FK_Account_Role");
+            });
+
+            modelBuilder.Entity<Feedback>(entity =>
+            {
+                entity.ToTable("Feedback");
+
+                entity.Property(e => e.FeedbackId).HasColumnName("FeedbackID");
+
+                entity.Property(e => e.AccountId).HasColumnName("AccountID");
+
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Description).HasMaxLength(500);
+
+                entity.Property(e => e.SubjectId).HasColumnName("SubjectID");
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.AccountId)
+                    .HasConstraintName("FK_Feedback_Account");
+
+                entity.HasOne(d => d.Subject)
+                    .WithMany(p => p.Feedbacks)
+                    .HasForeignKey(d => d.SubjectId)
+                    .HasConstraintName("FK_Feedback_Subject");
             });
 
             modelBuilder.Entity<Question>(entity =>

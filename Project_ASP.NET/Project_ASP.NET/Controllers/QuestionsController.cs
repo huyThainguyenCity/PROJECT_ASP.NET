@@ -57,11 +57,11 @@ namespace Project_ASP.NET.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddQuestion(string desc,int subjectID)
+        public IActionResult AddQuestion(string desc,int subjectID, int accountID)
         {
             try
             {
-                _us.AddQuestion(desc,subjectID);
+                _us.AddQuestion(desc,subjectID,accountID);
                 return Ok();
             }
             catch (Exception ex)
@@ -69,9 +69,6 @@ namespace Project_ASP.NET.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //Tớ hỏi cái Thái Quân ơi? Nếu bây giờ ví dụ nhé tớ đăng nhập student1, thì cái session là student1, tớ thêm câu hỏi
-        //nma nếu t đăng nhập st2 thì thêm câu hỏi nó vẫn oke chả hạn. Thì api bên trên tớ có cần truyền accountid vào k? Có
-        // Hoặc không. Tớ nghĩ là không
 
         [HttpPut]
         public IActionResult UpdateAnswer(int questionID, int subjectID, string ans_desc)

@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="#" class="link active">Trang chủ</a></li>
                 <li><a href="subject" class="link">Câu hỏi</a></li>
-                <li><a href="#" class="link">Nhận xét</a></li>
+                <li><a href="subjectfeedback" class="link">Nhận xét</a></li>
 
             </ul>
         </div>
@@ -56,7 +56,7 @@
                         <td>@item.Subject.SubjectName</td>
                         <td>@item.Account.TeacherCode</td>
                         <td>@item.Subject.SubjectId</td>
-                        <td><a asp-controller="Question" asp-route-subjectID="@item.Subject.SubjectId"><button>View</button></a></td>
+                        <td><a asp-controller="Question" asp-route-subjectID="@item.Subject.SubjectId"><button>Xem câu hỏi của môn học</button></a></td>
                     </tr>
                 }
             </tbody>

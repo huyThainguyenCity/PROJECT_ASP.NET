@@ -7,6 +7,7 @@ namespace BusinessObject.Models
     {
         public Account()
         {
+            Feedbacks = new HashSet<Feedback>();
             Questions = new HashSet<Question>();
             SubjectAccounts = new HashSet<SubjectAccount>();
         }
@@ -23,6 +24,7 @@ namespace BusinessObject.Models
         public string? Avatar { get; set; }
 
         public virtual Role? Role { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<SubjectAccount> SubjectAccounts { get; set; }
     }

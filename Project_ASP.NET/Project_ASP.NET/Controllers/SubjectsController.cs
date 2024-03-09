@@ -29,13 +29,13 @@ namespace Project_ASP.NET.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Subject>> GetAllSubject()
+        public ActionResult<List<Subject>> GetListAllSubject()
         {
-            if (_us.GetListAll == null)
+            if (_us.GetListAllSubject == null)
             {
                 return NotFound();
             }
-            return _us.GetListAll();
+            return _us.GetListAllSubject();
         }
     }
 }

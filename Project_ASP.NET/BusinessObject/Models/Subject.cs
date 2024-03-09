@@ -7,6 +7,7 @@ namespace BusinessObject.Models
     {
         public Subject()
         {
+            Feedbacks = new HashSet<Feedback>();
             Questions = new HashSet<Question>();
             SubjectAccounts = new HashSet<SubjectAccount>();
         }
@@ -15,6 +16,7 @@ namespace BusinessObject.Models
         public string? SubjectName { get; set; }
         public string? SubjectCode { get; set; }
 
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<SubjectAccount> SubjectAccounts { get; set; }
     }

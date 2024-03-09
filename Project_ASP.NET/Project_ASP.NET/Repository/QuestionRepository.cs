@@ -14,24 +14,7 @@ namespace Project_ASP.NET.Repository
             _context = context;
         }
 
-        public void AddQuestion(string desc)
-        {
-            try
-            {
-                Question ques = new Question()
-                {
-                    Description = desc
-                };
-                _context.Questions.Add(ques);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error!");
-            }
-        }
-
-        public void AddQuestion(string desc, int subjectID)
+        public void AddQuestion(string desc, int subjectID, int accountID)
         {
             try
             {
@@ -39,6 +22,7 @@ namespace Project_ASP.NET.Repository
                 {
                     Description = desc,
                     SubjectId = subjectID,
+                    AccountId = accountID,
                     CreateDate = DateTime.Now
                 };
                 _context.Questions.Add(question);

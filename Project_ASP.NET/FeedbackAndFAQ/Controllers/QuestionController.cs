@@ -112,6 +112,7 @@ namespace FeedbackAndFAQ.Controllers
                     {
                         string data = await content.ReadAsStringAsync();
                         question = JsonConvert.DeserializeObject<Question>(data);
+                                            
                     }
                 }
             }
@@ -119,6 +120,27 @@ namespace FeedbackAndFAQ.Controllers
         }
 
         public async Task<IActionResult> Insert(string desc, int subjectID)
+        {
+            string accountID = HttpContext.Session.GetString("Account");
+            string link = "https://localhost:7198/api/Questions";
+            Question question = new Question();
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.PostAsync
+                (link + "?desc=" + desc + "&subjectID=" + subjectID + "&accountID=" + accountID, null))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        question = JsonConvert.DeserializeObject<Question>(data);
+                    }
+                }
+            }
+            List<Question> questions = await GetBookFromApi(subjectID);
+            return View("ListQuestionStudent", questions);
+        }
+
+        public async Task<IActionResult> AddQuestionStudent()
         {
             string link1 = "https://localhost:7198/api/Subjects";
             List<Subject> subjects = new List<Subject>();
@@ -134,23 +156,7 @@ namespace FeedbackAndFAQ.Controllers
                 }
             }
             ViewBag.Subject = subjects;
-
-            string link = "https://localhost:7198/api/Questions";
-
-            Question question = new Question();
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage res = await client.PostAsync
-                (link + "?desc=" + desc + "&subjectID=" + subjectID, null))
-                {
-                    using (HttpContent content = res.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        question = JsonConvert.DeserializeObject<Question>(data);
-                    }
-                }
-            }
-            return View("ListQuestionStudent", question);
+            return View("AddQuestionStudent");
         }
     }
 }

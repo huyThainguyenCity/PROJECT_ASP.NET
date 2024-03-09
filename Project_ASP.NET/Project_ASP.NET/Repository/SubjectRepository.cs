@@ -21,12 +21,6 @@ namespace Project_ASP.NET.Repository
             throw new NotImplementedException();
         }
 
-        public List<Subject> GetListAll()
-        {
-            var subjects = _context.Subjects.ToList();
-            return subjects;
-        }
-
         public List<SubjectAccount> GetList(int accountID)
         {
             List<SubjectAccount> subjects = _context.SubjectAccounts
@@ -41,6 +35,12 @@ namespace Project_ASP.NET.Repository
             //    sub.Add(subs);
             //}
             return subjects;
+        }
+
+        public List<Subject> GetListAllSubject()
+        {
+            var subject = _context.Subjects.ToList();
+            return subject;
         }
 
         public void UpdateSubject(string subjectName)

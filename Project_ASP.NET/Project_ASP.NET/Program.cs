@@ -24,6 +24,7 @@ namespace Project_ASP.NET
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
             builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
+            builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 
             var app = builder.Build();
 
