@@ -19,11 +19,13 @@ namespace FeedbackAndFAQ.Controllers
                 if (roleId == 1)
                 {
                     List<SubjectAccount> subjects = await GetBookFromApi(int.Parse(accountID));
+                    ViewBag.Layout = "_Layout";
                     return View(subjects);
                 }
                 if (roleId == 2)
                 {
                     List<SubjectAccount> subjects = await GetBookFromApi(int.Parse(accountID));
+                    ViewBag.Layout = "_Layout";
                     return View("FeedbackStudent", subjects);
                 }
                 else

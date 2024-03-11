@@ -8,6 +8,7 @@ namespace FeedbackAndFAQ.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Layout = null; // hoặc ViewBag.Layout = "_Layout"; để sử dụng layout cụ thể
             return View();
         }
 
@@ -71,6 +72,14 @@ namespace FeedbackAndFAQ.Controllers
                 ViewData["Error"] = "Có lỗi xảy ra khi thực hiện đăng ký.";
                 return View("Index");
             }
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return View("Index");
+            
         }
     }
 }

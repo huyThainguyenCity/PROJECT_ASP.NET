@@ -21,11 +21,13 @@ namespace FeedbackAndFAQ.Controllers
                 if (roleId == 1)
                 {
                     List<Feedback> feedbacks = await GetBookFromApi(subjectID);
+                    ViewBag.Layout = "_Layout";
                     return View("Index", feedbacks);
                 }
                 if (roleId == 2)
                 {
                     List<Feedback> feedbacks = await GetBookFromApiSandA(subjectID, int.Parse(accountID));
+                    ViewBag.Layout = "_Layout";
                     return View("ListFeedbackStudent", feedbacks);
                 }
                 else
@@ -97,6 +99,7 @@ namespace FeedbackAndFAQ.Controllers
                 }
             }
             List<Feedback> feedbacks = await GetBookFromApi(subjectID);
+            ViewBag.Layout = "_Layout";
             return View("ListFeedbackStudent", feedbacks);
         }
 
@@ -116,6 +119,7 @@ namespace FeedbackAndFAQ.Controllers
                 }
             }
             ViewBag.Subject = subjects;
+            ViewBag.Layout = "_Layout";
             return View("AddFeedbackStudent");
         }
     }

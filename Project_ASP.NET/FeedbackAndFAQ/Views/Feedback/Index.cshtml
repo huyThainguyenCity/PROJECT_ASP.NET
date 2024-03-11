@@ -4,9 +4,6 @@
 @{
     var feedback = ViewBag.Feedback as Feedback;
 }
-@{
-    Layout = null;
-}
 
 
 <!DOCTYPE html>
@@ -24,25 +21,7 @@
 
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-logo">
-            <p>LOGO .</p>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" class="link active">Trang chủ</a></li>
-                <li><a href="subject" class="link">Câu hỏi</a></li>
-                <li><a href="subjectfeedback" class="link">Nhận xét</a></li>
-
-            </ul>
-        </div>
-        <div class="nav-button">
-            <a href="login.html"> <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button></a>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
+    
 
     <div class="feedback">
         <div class="feedback__title">FPT University</div>
@@ -88,35 +67,6 @@
         </div>
     </div>
 
-    <footer>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Truyền thông</h3>
-            <li>Youtube</li>
-            <li><img class="eduma" src="https://eduma.vn/wp-content/uploads/2019/02/VNNIC.png"></li>
-            <li></li>
-        </div>
-    </footer>
 </body>
 <script>
     $(document).ready(function () {

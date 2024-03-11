@@ -18,25 +18,6 @@
 
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-logo">
-            <p>LOGO .</p>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" class="link active">Trang chủ</a></li>
-                <li><a href="subject" class="link">Câu hỏi</a></li>
-                <li><a href="subjectfeedback" class="link">Nhận xét</a></li>
-
-            </ul>
-        </div>
-        <div class="nav-button">
-            <a href="login.html"> <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button></a>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
 
     <div class="container">
         <h1 class="title">... Danh sách môn học</h1>
@@ -56,42 +37,12 @@
                         <td>@item.Subject.SubjectName</td>
                         <td>@item.Account.TeacherCode</td>
                         <td>@item.Subject.SubjectId</td>
-                        <td><a asp-controller="Feedback" asp-route-subjectID="@item.Subject.SubjectId"><button>Xem phản hồi của môn học</button></a></td>
+                        <td><a class="view-feedback" asp-controller="Feedback" asp-route-subjectID="@item.Subject.SubjectId">Xem phản hồi của môn học</a></td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-
-    <footer>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Top Sản phẩm</h3>
-            <li>Khóa học</li>
-            <li>Giới thiệu</li>
-            <li>Sự kiện</li>
-
-        </div>
-        <div class="footer-col">
-            <h3>Truyền thông</h3>
-            <li>Youtube</li>
-            <li><img class="eduma" src="https://eduma.vn/wp-content/uploads/2019/02/VNNIC.png"></li>
-            <li></li>
-        </div>
-    </footer>
 </body>
 
 <script>

@@ -15,6 +15,7 @@ namespace FeedbackAndFAQ.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Layout = "_Layout"; // hoặc ViewBag.Layout = "_Layout"; để sử dụng layout cụ thể
             return View();
         }
 

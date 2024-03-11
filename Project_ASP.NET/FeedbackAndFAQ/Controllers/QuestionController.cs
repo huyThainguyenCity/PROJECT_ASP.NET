@@ -21,11 +21,13 @@ namespace FeedbackAndFAQ.Controllers
                 if (roleId == 1)
                 {
                     List<Question> questions = await GetBookFromApi(subjectID);
+                    ViewBag.Layout = "_Layout";
                     return View("Index", questions);
                 }
                 if (roleId == 2)
                 {
                     List<Question> questions = await GetBookFromApiSandA(subjectID, int.Parse(accountID));
+                    ViewBag.Layout = "_Layout";
                     return View("ListQuestionStudent", questions);
                 }
                 else
@@ -95,6 +97,7 @@ namespace FeedbackAndFAQ.Controllers
                     }
                 }
             }
+            ViewBag.Layout = "_Layout";
             List<Question> questions = await GetBookFromApi(subjectID);
             ViewBag.Question = question;
             return View("Index", questions);
@@ -116,6 +119,7 @@ namespace FeedbackAndFAQ.Controllers
                     }
                 }
             }
+            ViewBag.Layout = "_Layout";
             return View("Answer", question);
         }
 
@@ -136,6 +140,7 @@ namespace FeedbackAndFAQ.Controllers
                     }
                 }
             }
+            ViewBag.Layout = "_Layout";
             List<Question> questions = await GetBookFromApi(subjectID);
             return View("ListQuestionStudent", questions);
         }
@@ -156,6 +161,7 @@ namespace FeedbackAndFAQ.Controllers
                 }
             }
             ViewBag.Subject = subjects;
+            ViewBag.Layout = "_Layout";
             return View("AddQuestionStudent");
         }
     }
