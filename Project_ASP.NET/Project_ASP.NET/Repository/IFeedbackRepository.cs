@@ -15,5 +15,7 @@ namespace Project_ASP.NET.Repository
         //public void UpdateAnswer(int questionID, int subjectID, string ans_desc);
 
         //public Question GetQuestionByID(int questionID);
+
+        public void DeleteFeedback(int feedbackID);
     }
 }

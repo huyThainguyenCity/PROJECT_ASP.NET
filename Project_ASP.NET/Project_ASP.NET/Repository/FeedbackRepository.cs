@@ -31,6 +31,22 @@ namespace Project_ASP.NET.Repository
             }
         }
 
+        public void DeleteFeedback(int feedbackID)
+        {
+            try
+            {
+                {
+                    _context.Feedbacks.Remove(_context.Feedbacks.Find(feedbackID));
+                    _context.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         public List<Feedback> getAll()
         {
             List<Feedback> list = _context.Feedbacks.ToList();

@@ -26,15 +26,14 @@
         <div class="feedback__title">FPT University</div>
         <div class="feedback__header">
             <div class="feedback__header__left">
-                <span class="feedback__header__left__home">Home</span>
+                 <a style="text-decoration:none" href="home" class="feedback__header__left__home">Trang chủ</a>
                 <span>|</span>
-                <span>View Feedback</span>
+                <span>Danh sách câu hỏi</span>
             </div>
             <div class="feedback__header__right">
-                <span>quannt</span>
-                <span>HE151386</span>
-                <span>Campus Hòa Lạc</span>
-            </div>
+                @*<span>@(Model.FirstOrDefault(u => u.AccountId.ToString() == Context.Session.GetString("Account"))?.Account.FullName ?? "No FullName")</span>
+                <span>@Model.First().Account.TeacherCode : "No TeacherCode")</span>*@
+                </div>
         </div>
         <div class="feedback__table">
             <table id="myTable" class="table table-striped" style="width:100%">

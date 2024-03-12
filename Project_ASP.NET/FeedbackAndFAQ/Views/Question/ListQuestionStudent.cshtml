@@ -4,9 +4,6 @@
 @{
     var question = ViewBag.Question as Question;
 }
-@{
-    Layout = null;
-}
 
 
 <!DOCTYPE html>
@@ -24,19 +21,27 @@
 
 </head>
 <body>
-    
+
 
     <div class="feedback">
         <div class="feedback__title">FPT University</div>
         <div class="feedback__header">
             <div class="feedback__header__left">
-                <span class="feedback__header__left__home">Home</span>
+                <a style="text-decoration:none" href="home" class="feedback__header__left__home">Trang chủ</a>
                 <span>|</span>
-                <span>View Feedback</span>
+                <span>Danh sách câu hỏi</span>
             </div>
             <div class="feedback__header__right">
-                <span>quannt</span>
-                <span>HE151386</span>
+                @*@if (Model.Count > 0)
+                {
+                var question = Model[0];
+                <span>@question.Account.FullName</span>
+                <span>@question.Account.StudentCode</span>
+                }*@
+
+                <span>@(Model.Count > 0 ? Model.First().Account.FullName : "No FullName")</span>
+                <span>@(Model.Count > 0 ? Model.First().Account.StudentCode : "No StudentCode")</span>
+
                 <span>Campus Hòa Lạc</span>
             </div>
         </div>
@@ -82,7 +87,7 @@
         </div>
     </div>
 
-    
+
 </body>
 <script>
     $(document).ready(function () {

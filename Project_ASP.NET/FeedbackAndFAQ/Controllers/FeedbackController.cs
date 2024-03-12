@@ -122,5 +122,26 @@ namespace FeedbackAndFAQ.Controllers
             ViewBag.Layout = "_Layout";
             return View("AddFeedbackStudent");
         }
+
+        public async Task<IActionResult> Delete(int feedbackID, int subjectID)
+        {
+            string link = "https://localhost:7198/api/Feedbacks";
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.DeleteAsync(link + "?feedbackID=" + feedbackID))
+                {
+                    if (res.IsSuccessStatusCode)
+                    {
+                        List<Feedback> feedbacks = await GetBookFromApi(subjectID);
+                        ViewBag.Layout = "_Layout";
+                        return View("Index", feedbacks);
+                    }
+                    else
+                    {
+                        return Redirect($"/Login");
+                    }
+                }
+            }
+        }
     }
 }

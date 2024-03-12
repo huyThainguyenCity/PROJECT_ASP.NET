@@ -61,5 +61,20 @@ namespace Project_ASP.NET.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete]
+
+        public IActionResult DeleteFeedback(int feedbackID)
+        {
+            try
+            {
+                _us.DeleteFeedback(feedbackID);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
