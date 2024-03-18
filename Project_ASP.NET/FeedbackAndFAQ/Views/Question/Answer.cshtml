@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Trả lời</label>
-                <textarea style="height: 200px" type="text" class="form-control" name="ans_desc" id="exampleInputPassword1">@(Model != null ? Model.AnswerDescription : "")</textarea>
+                <textarea style="height: 200px" type="text" class="form-control" name="ans_desc" id="exampleInputPassword1" required>@(Model != null ? Model.AnswerDescription : "")</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Gửi</button>
         </form>

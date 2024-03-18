@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    
+
 
     <div class="feedback">
         <div class="feedback__title">FPT University</div>
@@ -32,8 +32,8 @@
                 <span>Danh sách phản hồi</span>
             </div>
             <div class="feedback__header__right">
-                <span>@(Model.Count > 0 ? Model.First().Account.FullName : "No FullName")</span>
-                <span>@(Model.Count > 0 ? Model.First().Account.TeacherCode : "No TeacherCode")</span>
+                @*<span>@(Model.Count > 0 ? Model.First().Account.FullName : "No FullName")</span>
+                <span>@(Model.Count > 0 ? Model.First().Account.TeacherCode : "No TeacherCode")</span>*@
                 <span>Campus Hòa Lạc</span>
             </div>
         </div>
@@ -59,7 +59,7 @@
                             <td>@item.Subject.SubjectCode</td>
                             <td>@item.Description</td>
                             <td>@item.CreateDate</td>
-                            <td><a asp-controller="feedback" asp-action="Delete" asp-route-feedbackID="@item.FeedbackId" asp-route-subjectID="@item.SubjectId">Xóa</a></td>
+                            <td><a style="text-decoration:none" asp-controller="feedback" asp-action="Delete" asp-route-feedbackID="@item.FeedbackId" asp-route-subjectID="@item.SubjectId">Xóa</a></td>
                         </tr>
                     }
                 </tbody>

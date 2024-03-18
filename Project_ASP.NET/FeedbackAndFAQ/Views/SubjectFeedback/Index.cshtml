@@ -26,8 +26,8 @@
             <th>Mã môn</th>
             <th>Tên môn</th>
             <th>Giáo viên</th>
-            <th>fds</th>
-            <th>Status</th>
+            <th>Tên đầy đủ</th>
+            <th>Hành động</th>
             </thead>
             <tbody>
                 @foreach (SubjectAccount item in Model)
@@ -36,7 +36,7 @@
                         <td>@item.Subject.SubjectCode</td>
                         <td>@item.Subject.SubjectName</td>
                         <td>@item.Account.TeacherCode</td>
-                        <td>@item.Subject.SubjectId</td>
+                        <td>@item.Account.FullName</td>
                         <td><a class="view-feedback" asp-controller="Feedback" asp-route-subjectID="@item.Subject.SubjectId">Xem phản hồi của môn học</a></td>
                     </tr>
                 }

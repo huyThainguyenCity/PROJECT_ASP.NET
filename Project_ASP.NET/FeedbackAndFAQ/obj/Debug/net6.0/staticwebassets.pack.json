@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\back.jpg"
     },
     {
+      "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\back2.jpg",
+      "PackagePath": "staticwebassets\\images\\back2.jpg"
+    },
+    {
       "Id": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\login-background3.jpg",
       "PackagePath": "staticwebassets\\images\\login-background3.jpg"
     },

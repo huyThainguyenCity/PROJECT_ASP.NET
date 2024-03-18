@@ -79,7 +79,16 @@
                             </td>
                             <td>@item.CreateDate</td>
                             <td>@item.ReplyDate</td>
-                            <td>Process</td>
+                            <td>
+                                @if (string.IsNullOrEmpty(item.AnswerDescription))
+                                {
+                                    <span style="color: #FF5733; font-weight: bold;">Chưa trả lời</span>
+                                }
+                                else
+                                {
+                                    <span style="color: #28A745; font-weight: bold;">Đã trả lời</span>
+                                }
+                            </td>
                         </tr>
                     }
                 </tbody>

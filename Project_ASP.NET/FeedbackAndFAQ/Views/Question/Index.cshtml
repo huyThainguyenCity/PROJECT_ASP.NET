@@ -31,8 +31,8 @@
                 <span>Danh sách câu hỏi</span>
             </div>
             <div class="feedback__header__right">
-                @*<span>@(Model.FirstOrDefault(u => u.AccountId.ToString() == Context.Session.GetString("Account"))?.Account.FullName ?? "No FullName")</span>
-                <span>@Model.First().Account.TeacherCode : "No TeacherCode")</span>*@
+               @* <span>@(Model.Count > 0 ? Model.First().Account.FullName : "No FullName")</span>
+                <span>@(Model.Count > 0 ? Model.First().Account.TeacherCode : "No TeacherCode")</span>*@
                 </div>
         </div>
         <div class="feedback__table">
@@ -70,7 +70,16 @@
                             </td>
                             <td>@item.CreateDate</td>
                             <td>@item.ReplyDate</td>
-                            <td>Process</td>
+                            <td>
+                                @if (string.IsNullOrEmpty(item.AnswerDescription))
+                                {
+                                    <span style="color: #FF5733; font-weight: bold;">Chưa trả lời</span>
+                                }
+                                else
+                                {
+                                    <span style="color: #28A745; font-weight: bold;">Đã trả lời</span>
+                                }
+                            </td>
                         </tr>
                     }
                 </tbody>

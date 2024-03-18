@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AnWcMEp1lij3yJmAq36gJGn38DE0s1D0F/9rn6YNEKk=",
+  "Hash": "P2m9YNeDX7jK5ysSQ/Or5YKIJGCQXv1KNdAJQLmfFkA=",
   "Source": "FeedbackAndFAQ",
   "BasePath": "_content/FeedbackAndFAQ",
   "Mode": "Default",
@@ -180,6 +180,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\back.jpg"
+    },
+    {
+      "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\back2.jpg",
+      "SourceId": "FeedbackAndFAQ",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\",
+      "BasePath": "_content/FeedbackAndFAQ",
+      "RelativePath": "images/back2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\back2.jpg"
     },
     {
       "Identity": "D:\\PRN231\\ProjectPRN231_HuyDQ\\PROJECT_ASP.NET\\Project_ASP.NET\\FeedbackAndFAQ\\wwwroot\\images\\login-background3.jpg",

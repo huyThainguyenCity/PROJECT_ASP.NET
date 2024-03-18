@@ -89,3 +89,15 @@ table tbody tr td {
 table thead tr th.sorting {
     background-color: #6B90DA;
 }
+.delete-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .delete-btn:hover {
+        background-color: #c82333; /* Darker red color on hover */
+    }
